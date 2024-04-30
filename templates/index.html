@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid bg-image">
+        <div class="container">
+            <h1 class="text-center heading">
+                <img src="{{ url_for('static', filename='india.jpg') }}" alt="Indian Map Icon" class="icon">
+                Indian State Rainfall Prediction
+            </h1>
+            <p class="text-center">
+                This is the rainfall prediction tool for Indian states, utilizing historical data from 1901 to 2015. The tool predicts monthly rainfall for each year, from January to December, for a specified state.
+            </p>
+            <form action="/predict" method="POST" class="mx-auto" style="max-width: 400px;">
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" class="form-control" required>
+                        <option value="" disabled selected>Select a location</option>
+                        <option value="ANDAMAN & NICOBAR ISLANDS">ANDAMAN & NICOBAR ISLANDS</option>
+                        <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                        <option value="ASSAM & MEGHALAYA">ASSAM & MEGHALAYA</option>
+                        <option value="NAGA MANI MIZO TRIPURA">NAGA MANI MIZO TRIPURA</option>
+                        <option value="SUB HIMALAYAN WEST BENGAL & SIKKIM">SUB HIMALAYAN WEST BENGAL & SIKKIM</option>
+                        <option value="GANGETIC WEST BENGAL">GANGETIC WEST BENGAL</option>
+                        <option value="ORISSA">ORISSA</option>
+                        <option value="JHARKHAND">JHARKHAND</option>
+                        <option value="BIHAR">BIHAR</option>
+                        <option value="EAST UTTAR PRADESH">EAST UTTAR PRADESH</option>
+                        <option value="WEST UTTAR PRADESH">WEST UTTAR PRADESH</option>
+                        <option value="UTTARAKHAND">UTTARAKHAND</option>
+                        <option value="HARYANA DELHI & CHANDIGARH">HARYANA DELHI & CHANDIGARH</option>
+                        <option value="PUNJAB">PUNJAB</option>
+                        <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                        <option value="JAMMU & KASHMIR">JAMMU & KASHMIR</option>
+                        <option value="WEST RAJASTHAN">WEST RAJASTHAN</option>
+                        <option value="EAST RAJASTHAN">EAST RAJASTHAN</option>
+                        <option value="WEST MADHYA PRADESH">WEST MADHYA PRADESH</option>
+                        <option value="EAST MADHYA PRADESH">EAST MADHYA PRADESH</option>
+                        <option value="GUJARAT REGION">GUJARAT REGION</option>
+                        <option value="SAURASHTRA & KUTCH">SAURASHTRA & KUTCH</option>
+                        <option value="KONKAN & GOA">KONKAN & GOA</option>
+                        <option value="MADHYA MAHARASHTRA">MADHYA MAHARASHTRA</option>
+                        <option value="MATATHWADA">MATATHWADA</option>
+                        <option value="VIDARBHA">VIDARBHA</option>
+                        <option value="CHHATTISGARH">CHHATTISGARH</option>
+                        <option value="COASTAL ANDHRA PRADESH">COASTAL ANDHRA PRADESH</option>
+                        <option value="TELANGANA">TELANGANA</option>
+                        <option value="RAYALSEEMA">RAYALSEEMA</option>
+                        <option value="TAMIL NADU">TAMIL NADU</option>
+                        <option value="COASTAL KARNATAKA">COASTAL KARNATAKA</option>
+                        <option value="NORTH INTERIOR KARNATAKA">NORTH INTERIOR KARNATAKA</option>
+                        <option value="SOUTH INTERIOR KARNATAKA">SOUTH INTERIOR KARNATAKA</option>
+                        <option value="KERALA">KERALA</option>
+                        <option value="LAKSHADWEEP">LAKSHADWEEP</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" name="year" class="form-control" required placeholder="Please enter year">
+                </div>
+
+                <div class="form-group">
+                    <label for="month">Month:</label>
+                    <select id="month" name="month" class="form-control" required>
+                        <option value="" disabled selected>Select a month</option>
+                        <option value="JAN">January</option>
+                        <option value="FEB">February</option>
+                        <option value="MAR">March</option>
+                        <option value="APR">April</option>
+                        <option value="MAY">May</option>
+                        <option value="JUN">June</option>
+                        <option value="JUL">July</option>
+                        <option value="AUG">August</option>
+                        <option value="SEP">September</option>
+                        <option value="OCT">October</option>
+                        <option value="NOV">November</option>
+                        <option value="DEC">December</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

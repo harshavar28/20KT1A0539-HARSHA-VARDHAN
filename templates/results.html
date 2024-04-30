@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid bg-image">
+        <div class="container">
+            <h1 class="text-center heading">
+                <img src="{{ url_for('static', filename='india.jpg') }}" alt="Indian Map Icon" class="icon">
+                Rainfall Prediction Of  Indian States
+            </h1>
+            <p class="text-center">
+                This is the rainfall prediction tool for Indian states, utilizing historical data from 1901 to 2015. The tool predicts monthly rainfall for each year, from January to December, for a specified state.
+            </p>
+
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Year:</strong> {{ year }}</p>
+            <p><strong>Month:</strong> {{ month }}</p>
+            <p><strong>Predicted Rainfall:</strong> {{ predicted_rainfall }} mm</p>
+
+            <a href="/" class="btn btn-secondary">Go back</a>
+        </div>
+    </div>
+</body>
+</html>
